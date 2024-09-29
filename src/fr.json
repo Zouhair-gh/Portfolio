@@ -4,7 +4,8 @@
     "home": "Accueil",
     "about": "À propos",
     "projects": "Projets",
-    "resume": "CV"
+    "resume": "CV",
+    "certificate": "Certificat"
   },
     "1st": {
       "greeting": "Salut !",
@@ -80,6 +81,19 @@
       "resumezouhair": {
         "title": "Mon CV",
         "download": "Télécharger le CV (PDF)"
+      }
+      ,
+      "certificates": {
+        "title": "Certificats",
+        "laravelDescription": "Ce certificat met en évidence ma plongée approfondie dans le framework Laravel et PHP, soulignant l'application pratique de ces technologies dans le développement web moderne. Les principaux apprentissages incluent : la maîtrise de l'intégration de PHP dans HTML et le scripting côté serveur, l'exploration des fonctionnalités avancées de Laravel telles que le middleware et l'authentification, l'acquisition des meilleures pratiques en matière de sécurité avec la protection CSRF, la sécurité des sessions et la validation des entrées utilisateur, et la gestion des bases de données via les migrations et Eloquent ORM pour une gestion efficace des projets.",
+        "softwareEngineeringDescription": "Ce certificat représente mon expertise en ingénierie logicielle, axée sur la conception de logiciels et la gestion de projets. Au cours de cette formation, j'ai acquis des compétences essentielles en architecture logicielle, interaction homme-machine et recherche et conception. De plus, j'ai développé des compétences en test de logiciels et gestion de projets, me permettant de superviser les projets de manière efficace et d'assurer une livraison de logiciels de haute qualité.",
+        "webDevelopmentDescription": "Ce certificat démontre ma compétence en HTML, CSS et JavaScript pour les développeurs web. Dans ce cours, j'ai développé une solide base en HTML et CSS, essentielle pour créer des pages web visuellement attrayantes et structurées. De plus, j'ai acquis des compétences pratiques en développement web, me permettant de créer des applications web interactives et dynamiques en utilisant JavaScript.",
+        "advancedStylingDescription": "Ce certificat en stylisme avancé avec design réactif met en lumière mon expertise dans la création de mises en page adaptatives. J'ai appris à utiliser les outils de navigation pour le design réactif, en soulignant l'importance d'une approche 'mobile-first'. Ce cours m'a équipé des compétences pour écrire des règles CSS efficaces pour les vues mobiles et de grande taille, améliorant ainsi l'expérience utilisateur sur différents appareils. Les compétences clés acquises incluent HTML, CSS, design interactif, développement web et opérations stratégiques.",
+        "promptEngineeringDescription": "Ce certificat en ingénierie de prompt pour ChatGPT démontre ma capacité à travailler efficacement avec de grands modèles de langage. J'ai appris à appliquer des techniques d'ingénierie de prompt pour exploiter les puissantes capacités de modèles comme ChatGPT. Le cours a couvert l'utilisation de modèles de prompt et a fourni des idées sur la création d'applications complexes basées sur des prompts pouvant être utilisées dans divers contextes, y compris l'utilisation personnelle, les affaires et l'éducation."
+      },
+      "footer": {
+        "designer": "Conçu et développé par GHAOURI Zouhair",
+        "copyright": "Droit d'auteur © {{year}} ZG"
       }
       
   

@@ -2,8 +2,8 @@ import React from "react";
 import { Container, Row, Col, Button } from "react-bootstrap";
 import Particle from "../Particle";
 import { AiOutlineDownload } from "react-icons/ai";
-import pdfFR from "../../Assets/GHAOURI_Zouhair_Resume.pdf"; // French version
-import pdfEN from "../../Assets/GHAOURI_Zouhair_Resume_English_version.pdf"; // English version
+import pdfFR from "../../Assets/GHAOURI_Zouhair_Resume.pdf"; 
+import pdfEN from "../../Assets/GHAOURI_Zouhair_Resume_English_version.pdf"; 
 import cvImageFR from "../../Assets/GHAOURI_Zouhair_Resume.png"; 
 import cvImageEN from "../../Assets/GHAOURI_Zouhair_Resume_English_version.png"; 
 import { useTranslation } from "react-i18next";
@@ -11,7 +11,7 @@ import { useTranslation } from "react-i18next";
 function ResumeNew() {
   const { i18n } = useTranslation();
   
-  // Determine the image and PDF based on the selected language
+
   const cvImage = i18n.language === 'fr' ? cvImageFR : cvImageEN;
   const pdf = i18n.language === 'fr' ? pdfFR : pdfEN;
 

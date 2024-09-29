@@ -3,7 +3,8 @@
     "home": "Home",
     "about": "About",
     "projects": "Projects",
-    "resume": "Resume"
+    "resume": "Resume",
+     "certificate": "Certificate"
   },
     "1st": {
       "greeting": "Hi There!",
@@ -79,7 +80,22 @@
         "resumezouhair": {
           "title": "My Resume",
           "download": "Download CV (PDF)"
+        },
+      
+          "certificates": {
+            "title": "Certificates",
+            "laravelDescription": "This certificate highlights my deep dive into the Laravel framework and PHP, emphasizing the practical application of these technologies in modern web development. Key learnings include: mastering PHP integration into HTML and server-side scripting, exploring advanced Laravel features like middleware and authentication, acquiring security best practices with CSRF protection, session security, and user input validation, and managing databases through migrations and Eloquent ORM for effective project management.",
+            "softwareEngineeringDescription": "This certificate represents my expertise in Software Engineering, focusing on Software Design and Project Management. Throughout this course, I gained essential skills in Software Architecture, Human-Computer Interaction, and Research and Design. Additionally, I developed competencies in Software Testing and Project Management, enabling me to oversee projects efficiently and ensure high-quality software delivery.",
+            "webDevelopmentDescription": "This certificate demonstrates my proficiency in HTML, CSS, and JavaScript for Web Developers. In this course, I developed a strong foundation in HTML and CSS, essential for crafting visually appealing and structured web pages. Additionally, I gained practical skills in web development, enabling me to create interactive and dynamic web applications using JavaScript.",
+            "advancedStylingDescription": "This certificate in Advanced Styling with Responsive Design highlights my expertise in creating adaptive layouts. I learned to utilize browser tools for responsive design, emphasizing the importance of a 'mobile-first' approach. This course equipped me with the skills to write effective CSS rules for both mobile and large-screen views, enhancing user experience across devices. Key skills gained include HTML, CSS, interactive design, web development, and strategic operations.",
+            "promptEngineeringDescription": "This certificate in Prompt Engineering for ChatGPT demonstrates my ability to work effectively with large language models. I learned to apply prompt engineering techniques to harness the powerful capabilities of models like ChatGPT. The course covered the use of prompt patterns and provided insights on creating complex prompt-based applications that can be leveraged in various contexts, including personal use, business, and education."
+          },
+          "footer": {
+          "designer": "Designed and Developed by GHAOURI Zouhair",
+          "copyright": "Copyright © {{year}} ZG"
         }
+      
+        
      
   
   }
