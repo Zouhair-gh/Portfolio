@@ -5,7 +5,6 @@ import Container from "react-bootstrap/Container";
 import Dropdown from "react-bootstrap/Dropdown";
 import { useTranslation } from "react-i18next";
 import CountryFlag from "react-country-flag";
-import logo from "../Assets/logo.png";
 import { Link } from "react-router-dom";
 import {
   AiOutlineHome,
@@ -35,16 +34,34 @@ function NavBar() {
 
   return (
     <Navbar
-      expanded={expand}
-      fixed="top"
-      expand="md"
-      className={navColour ? "sticky" : "navbar"}
-      style={{ transition: "background-color 0.3s" }}
-    >
-      <Container>
-        <Navbar.Brand href="/" className="d-flex">
-          <img src={logo} className="img-fluid logo" alt="brand" />
-        </Navbar.Brand>
+    expanded={expand}
+    fixed="top"
+    expand="md"
+    className={navColour ? "sticky" : "navbar"}
+    style={{ transition: "background-color 0.3s" }}
+  >
+    <Container>
+      <Navbar.Brand href="/" className="d-flex align-items-center">
+        <div style={{ display: 'flex', alignItems: 'center' }}>
+          <span style={{ 
+            fontSize: '2.5rem', 
+            fontWeight: 'bold', 
+            color: 'WHITE',
+            marginRight: '0.5rem'
+          }}>
+            G
+          </span>
+          <span style={{
+            fontSize: '1rem',
+            fontWeight: 'normal',
+            color: 'WHITE',
+            textTransform: 'uppercase',
+            letterSpacing: '1px'
+          }}>
+            HAOURI ZOUHAIR 
+          </span>
+        </div>
+      </Navbar.Brand>
         <Navbar.Toggle
           aria-controls="responsive-navbar-nav"
           onClick={() => {
@@ -82,7 +99,6 @@ function NavBar() {
               </Nav.Link>
             </Nav.Item>
 
-            {/* New Certificate/Certificat Button */}
             <Nav.Item>
               <Nav.Link as={Link} to="/certificate" onClick={() => updateExpanded(false)}>
                 <CgFileDocument style={{ marginBottom: "2px" }} /> {t("navbar.certificate")}
@@ -134,14 +150,14 @@ function NavBar() {
           font-size: 16px;
           color: #343a40;
           cursor: pointer;
-          height: 100%; /* Ensure dropdown matches height of navbar items */
+          height: 100%;
         }
         .language-dropdown:hover {
           background-color: rgba(0, 0, 0, 0.1);
         }
         .dropdown-menu {
           min-width: 100px;
-          padding: 0; /* Remove padding to align with navbar */
+          padding: 0;
         }
         .dropdown-item {
           display: flex;
