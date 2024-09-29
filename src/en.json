@@ -1,0 +1,85 @@
+{
+  "navbar": {
+    "home": "Home",
+    "about": "About",
+    "projects": "Projects",
+    "resume": "Resume"
+  },
+    "1st": {
+      "greeting": "Hi There!",
+      "introduction": "I'M",
+      "name": "GHAOURI Zouhair",
+      "title": "LET ME INTRODUCE MYSELF",
+      "intro": "From the moment I wrote my first line of code, I discovered a passion for problem-solving and innovation. Over time, I have honed my skills and continue to grow in the field of software engineering.",
+      "skills": "I'm proficient in technologies such as Python with Django, JavaScript with React.js, and PHP with Laravel, along with a strong command of front-end essentials like HTML, CSS, and Bootstrap.",
+      "interests": "My areas of interest lie in Cloud computing, DevOps, and Artificial Intelligence, where I aspire to build solutions that drive efficiency and unlock new possibilities in technology.",
+      "projects": "Whenever possible, I channel my passion for development into projects, utilizing modern frameworks and tools like React.js to bring ideas to life. I'm driven by a desire to push boundaries, learn continuously, and contribute to the future of technology.",
+      "hobbies": "Outside of tech, I'm passionate about sports and actively involved in volunteering, which helps me grow personally while giving back to the community.",
+      "findMe": "FIND ME ON",
+      "connect": "Feel free to connect with me"
+    },
+    "common": {
+      "introduce": "INTRODUCE",
+      "problemSolving": "problem-solving",
+      "innovation": "innovation",
+      "pythonDjango": "Python with Django",
+      "javascriptReact": "JavaScript with React.js",
+      "phpLaravel": "PHP with Laravel",
+      "html": "HTML",
+      "css": "CSS",
+      "bootstrap": "Bootstrap",
+      "cloudComputing": "Cloud computing",
+      "devOps": "DevOps",
+      "artificialIntelligence": "Artificial Intelligence",
+      "modernFrameworks": "modern frameworks",
+      "reactjs": "React.js",
+      "sports": "sports",
+      "volunteering": "volunteering"
+    },
+    "2nd": {
+      "greeting": "Hi Everyone, I am",
+      "name": "GHAOURI Zouhair",
+      "from": "from",
+      "country": "Morocco",
+      "education": "I am currently a 2nd-year Software Engineering student at the Moroccan School of Engineering Sciences.",
+      "passion": "I am passionate about exploring Web Development, DevOps, and Artificial Intelligence, always looking for opportunities to apply these cutting-edge technologies to real-world problems.",
+      "otherActivities": "Apart from coding, here are some activities I enjoy:",
+      "activities": {
+        "volunteering": "Volunteering to develop leadership and teamwork skills",
+        "hackathons": "Participating in Hackathons to hone problem-solving abilities",
+        "learning": "Continuous Learning through Online Courses and Certifications",
+        "communication": "Practicing Communication and Collaboration in Team Projects"
+      },
+      "quote": "Always striving to innovate and create solutions that make a positive impact!",
+      "footer": "Zouhair"
+    },
+    "3rd": {
+    "title": "Know Who",
+    "name": "I'M",
+    "altText": "about",
+    "professionalSkillset": "Professional",
+    "skillset": "Skillset",
+    "tools": "Tools",
+    "iUse": "I use"
+  },
+  "techstack": {
+    "modelingTools": "Modeling tools",
+    "uml": "UML",
+    "merise": "Merise",
+    "technologies": "Technologies",
+    "databaseManagement": "Database Management"
+  },
+    
+        "typewriter": {
+          "softwareEngineeringStudent": "Software Engineering student",
+          "webDeveloper": "Web Developer",
+          "mernStackDeveloper": "MERN Stack Developer",
+          "openSourceContributor": "Open Source Contributor"
+        },
+        "resumezouhair": {
+          "title": "My Resume",
+          "download": "Download CV (PDF)"
+        }
+     
+  
+  }

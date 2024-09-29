@@ -1,5 +1,6 @@
 import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
+import { useTranslation } from "react-i18next";
 import myImg from "../../Assets/Portrait.jpg";
 import Tilt from "react-parallax-tilt";
 import {
@@ -10,42 +11,32 @@ import {
 import { FaLinkedinIn } from "react-icons/fa";
 
 function Home2() {
+  const { t } = useTranslation();
+
   return (
     <Container fluid className="home-about-section" id="about">
       <Container>
         <Row>
           <Col md={8} className="home-about-description">
             <h1 style={{ fontSize: "2.6em" }}>
-              LET ME <span className="purple"> INTRODUCE </span> MYSELF
+              {t('1st.title').split(' ').map((word, index) => 
+                word === 'INTRODUCE' ? <span key={index} className="purple">{t('common.introduce')}</span> : word + ' '
+              )}
             </h1>
             <p className="home-about-body">
-              From the moment I wrote my first line of code, I discovered a passion for{" "}
-              <b className="purple">problem-solving</b> and <b className="purple">innovation</b>. Over time, I have honed my skills and continue to grow in the field of software engineering.
+              {t('1st.intro')}
               <br />
               <br />
-              I’m proficient in technologies such as{" "}
-              <i>
-                <b className="purple">Python with Django, JavaScript with React.js, and PHP with Laravel</b>
-              </i>, along with a strong command of front-end essentials like{" "}
-              <i>
-                <b className="purple">HTML, CSS,</b>
-              </i>{" "}
-              and <b className="purple">Bootstrap</b>.
+              {t('1st.skills')}
               <br />
               <br />
-              My areas of interest lie in{" "}
-              <b className="purple">Cloud computing, DevOps,</b> and{" "}
-              <b className="purple">Artificial Intelligence</b>, where I aspire to build solutions that drive efficiency and unlock new possibilities in technology.
+              {t('1st.interests')}
               <br />
               <br />
-              Whenever possible, I channel my passion for development into projects, utilizing{" "}
-              <i>
-                <b className="purple">modern frameworks</b>
-              </i>{" "}
-              and tools like <b className="purple">React.js</b> to bring ideas to life. I'm driven by a desire to push boundaries, learn continuously, and contribute to the future of technology.
+              {t('1st.projects')}
               <br />
               <br />
-              Outside of tech, I’m passionate about <b className="purple">sports</b> and actively involved in <b className="purple">volunteering</b>, which helps me grow personally while giving back to the community.
+              {t('1st.hobbies')}
             </p>
           </Col>
           <Col md={4} className="myAvtar">
@@ -56,9 +47,9 @@ function Home2() {
         </Row>
         <Row>
           <Col md={12} className="home-about-social">
-            <h1>FIND ME ON</h1>
+            <h1>{t('1st.findMe')}</h1>
             <p>
-              Feel free to <span className="purple">connect</span> with me
+              {t('1st.connect')}
             </p>
             <ul className="home-about-social-links">
               <li className="social-icons">

@@ -1,0 +1,87 @@
+{
+  "__comment_!!!!!!!": "1st is equivalent to Home Content i changed it to go away from confusion on Navbr as well as 2nd that represents AboutCard Content 3rd represent About Content ",
+  "navbar": {
+    "home": "Accueil",
+    "about": "À propos",
+    "projects": "Projets",
+    "resume": "CV"
+  },
+    "1st": {
+      "greeting": "Salut !",
+      "introduction": "JE SUIS",
+      "name": "GHAOURI Zouhair",
+      "title": "PERMETTEZ-MOI DE ME PRÉSENTER",
+      "intro": "Dès le moment où j'ai écrit ma première ligne de code, j'ai découvert une passion pour la résolution de problèmes et l'innovation. Au fil du temps, j'ai affiné mes compétences et je continue de progresser dans le domaine de l'ingénierie logicielle.",
+      "skills": "Je maîtrise des technologies telles que Python avec Django, JavaScript avec React.js, et PHP avec Laravel, ainsi qu'une solide maîtrise des éléments essentiels du front-end comme HTML, CSS et Bootstrap.",
+      "interests": "Mes domaines d'intérêt sont le Cloud computing, le DevOps et l'Intelligence Artificielle, où j'aspire à construire des solutions qui favorisent l'efficacité et ouvrent de nouvelles possibilités en technologie.",
+      "projects": "Chaque fois que possible, je canalise ma passion pour le développement dans des projets, en utilisant des frameworks modernes et des outils comme React.js pour donner vie aux idées. Je suis motivé par le désir de repousser les limites, d'apprendre continuellement et de contribuer à l'avenir de la technologie.",
+      "hobbies": "En dehors de la technologie, je suis passionné par le sport et activement impliqué dans le bénévolat, ce qui m'aide à grandir personnellement tout en redonnant à la communauté.",
+      "findMe": "RETROUVEZ-MOI SUR",
+      "connect": "N'hésitez pas à me contacter"
+    },
+    "common": {
+      "introduce": "PRÉSENTER",
+      "problemSolving": "résolution de problèmes",
+      "innovation": "innovation",
+      "pythonDjango": "Python avec Django",
+      "javascriptReact": "JavaScript avec React.js",
+      "phpLaravel": "PHP avec Laravel",
+      "html": "HTML",
+      "css": "CSS",
+      "bootstrap": "Bootstrap",
+      "cloudComputing": "Cloud computing",
+      "devOps": "DevOps",
+      "artificialIntelligence": "Intelligence Artificielle",
+      "modernFrameworks": "frameworks modernes",
+      "reactjs": "React.js",
+      "sports": "sport",
+      "volunteering": "bénévolat"
+    },
+    "2nd": {
+      "greeting": "Bonjour à tous, je suis",
+      "name": "GHAOURI Zouhair",
+      "from": "du",
+      "country": "Maroc",
+      "education": "Je suis actuellement étudiant en 2ème année d'Ingénierie Logicielle à l'École Marocaine des Sciences de l'Ingénieur.",
+      "passion": "Je suis passionné par l'exploration du Développement Web, du DevOps et de l'Intelligence Artificielle, toujours à la recherche d'opportunités pour appliquer ces technologies de pointe à des problèmes du monde réel.",
+      "otherActivities": "En dehors de la programmation, voici quelques activités que j'apprécie :",
+      "activities": {
+        "volunteering": "Le bénévolat pour développer des compétences en leadership et en travail d'équipe",
+        "hackathons": "Participer à des Hackathons pour affiner mes capacités de résolution de problèmes",
+        "learning": "L'apprentissage continu à travers des cours en ligne et des certifications",
+        "communication": "Pratiquer la communication et la collaboration dans des projets d'équipe"
+      },
+      "quote": "Toujours s'efforcer d'innover et de créer des solutions qui ont un impact positif !",
+      "footer": "Zouhair"
+    },
+    
+      "3rd": {
+        "title": "Savoir Qui",
+        "name": "SUIS-JE ",
+        "altText": "à propos",
+        "professionalSkillset": "Compétences",
+        "skillset": "Professionnelles",
+        "tools": "Outils",
+        "iUse": "J'utilise"
+      },
+      "techstack": {
+        "modelingTools": "Outils de modélisation",
+        "uml": "UML",
+        "merise": "Merise",
+        "technologies": "Technologies",
+        "databaseManagement": "Gestion de base de données"
+      },
+      "typewriter": {
+        "softwareEngineeringStudent": "Étudiant en ingénierie logicielle",
+        "webDeveloper": "Développeur web",
+        "mernStackDeveloper": "Développeur MERN Stack",
+        "openSourceContributor": "Contributeur Open Source"
+      },
+      "resumezouhair": {
+        "title": "Mon CV",
+        "download": "Télécharger le CV (PDF)"
+      }
+      
+  
+    
+  }
