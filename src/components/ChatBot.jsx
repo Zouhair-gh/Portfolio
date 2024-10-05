@@ -71,7 +71,7 @@ function DynamicLanguageSelector() {
           display: flex;
           align-items: center;
           justify-content: center;
-          background: linear-gradient(135deg, #6e8efb, #a777e3);
+          background: #f67367; /* Changed the background color here */
           box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
           transition: all 0.3s ease;
         }
@@ -79,7 +79,7 @@ function DynamicLanguageSelector() {
           transform: scale(1.1);
         }
         .selector-toggle.open {
-          background: linear-gradient(135deg, #a777e3, #6e8efb);
+          background: #f67367; /* Keep the background color on open */
         }
         .language-options {
           position: absolute;

@@ -37,10 +37,10 @@ function NavBar() {
       <Container>
         <Navbar.Brand href="/" className="d-flex align-items-center">
           <div style={{ display: 'flex', alignItems: 'center' }}>
-            <span style={{ 
+          <span style={{ 
               fontSize: '2.5rem', 
               fontWeight: 'bold', 
-              color: 'WHITE',
+              color: ' #f67367', 
               marginRight: '0.5rem'
             }}>
               G
