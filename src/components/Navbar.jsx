@@ -2,9 +2,7 @@ import React, { useState } from "react";
 import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
 import Container from "react-bootstrap/Container";
-import Dropdown from "react-bootstrap/Dropdown";
 import { useTranslation } from "react-i18next";
-import CountryFlag from "react-country-flag";
 import { Link } from "react-router-dom";
 import {
   AiOutlineHome,
@@ -16,7 +14,7 @@ import { CgFileDocument } from "react-icons/cg";
 function NavBar() {
   const [expand, updateExpanded] = useState(false);
   const [navColour, updateNavbar] = useState(false);
-  const { t, i18n } = useTranslation();
+  const { t } = useTranslation();
 
   function scrollHandler() {
     if (window.scrollY >= 20) {
@@ -28,40 +26,36 @@ function NavBar() {
 
   window.addEventListener("scroll", scrollHandler);
 
-  const changeLanguage = (lng) => {
-    i18n.changeLanguage(lng);
-  };
-
   return (
     <Navbar
-    expanded={expand}
-    fixed="top"
-    expand="md"
-    className={navColour ? "sticky" : "navbar"}
-    style={{ transition: "background-color 0.3s" }}
-  >
-    <Container>
-      <Navbar.Brand href="/" className="d-flex align-items-center">
-        <div style={{ display: 'flex', alignItems: 'center' }}>
-          <span style={{ 
-            fontSize: '2.5rem', 
-            fontWeight: 'bold', 
-            color: 'WHITE',
-            marginRight: '0.5rem'
-          }}>
-            G
-          </span>
-          <span style={{
-            fontSize: '1rem',
-            fontWeight: 'normal',
-            color: 'WHITE',
-            textTransform: 'uppercase',
-            letterSpacing: '1px'
-          }}>
-            HAOURI ZOUHAIR 
-          </span>
-        </div>
-      </Navbar.Brand>
+      expanded={expand}
+      fixed="top"
+      expand="md"
+      className={navColour ? "sticky" : "navbar"}
+      style={{ transition: "background-color 0.3s" }}
+    >
+      <Container>
+        <Navbar.Brand href="/" className="d-flex align-items-center">
+          <div style={{ display: 'flex', alignItems: 'center' }}>
+            <span style={{ 
+              fontSize: '2.5rem', 
+              fontWeight: 'bold', 
+              color: 'WHITE',
+              marginRight: '0.5rem'
+            }}>
+              G
+            </span>
+            <span style={{
+              fontSize: '1rem',
+              fontWeight: 'normal',
+              color: 'WHITE',
+              textTransform: 'uppercase',
+              letterSpacing: '1px'
+            }}>
+              HAOURI ZOUHAIR 
+            </span>
+          </div>
+        </Navbar.Brand>
         <Navbar.Toggle
           aria-controls="responsive-navbar-nav"
           onClick={() => {
@@ -104,31 +98,6 @@ function NavBar() {
                 <CgFileDocument style={{ marginBottom: "2px" }} /> {t("navbar.certificate")}
               </Nav.Link>
             </Nav.Item>
-
-            <Dropdown align="end">
-              <Dropdown.Toggle
-                variant="success"
-                id="dropdown-basic"
-                className="language-dropdown"
-              >
-                {i18n.language === "en" ? (
-                  <CountryFlag countryCode="GB" svg style={{ width: "24px", height: "24px" }} />
-                ) : (
-                  <CountryFlag countryCode="FR" svg style={{ width: "24px", height: "24px" }} />
-                )}
-              </Dropdown.Toggle>
-
-              <Dropdown.Menu className="dropdown-menu">
-                <Dropdown.Item onClick={() => changeLanguage("en")}>
-                  <CountryFlag countryCode="GB" svg style={{ width: "24px", height: "24px", marginRight: "5px" }} />
-                  English
-                </Dropdown.Item>
-                <Dropdown.Item onClick={() => changeLanguage("fr")}>
-                  <CountryFlag countryCode="FR" svg style={{ width: "24px", height: "24px", marginRight: "5px" }} />
-                  Français
-                </Dropdown.Item>
-              </Dropdown.Menu>
-            </Dropdown>
           </Nav>
         </Navbar.Collapse>
       </Container>
@@ -140,33 +109,6 @@ function NavBar() {
         }
         .sticky {
           background-color: rgba(255, 255, 255, 0.9);
-        }
-        .language-dropdown {
-          display: flex;
-          align-items: center;
-          border: none;
-          background-color: transparent;
-          padding: 0.5rem 1rem;
-          font-size: 16px;
-          color: #343a40;
-          cursor: pointer;
-          height: 100%;
-        }
-        .language-dropdown:hover {
-          background-color: rgba(0, 0, 0, 0.1);
-        }
-        .dropdown-menu {
-          min-width: 100px;
-          padding: 0;
-        }
-        .dropdown-item {
-          display: flex;
-          align-items: center;
-          padding: 10px 15px;
-          color: #343a40;
-        }
-        .dropdown-item:hover {
-          background-color: rgba(0, 0, 0, 0.1);
         }
       `}</style>
     </Navbar>

@@ -8,6 +8,8 @@ import Footer from "./components/Footer";
 import Resume from "./components/Resume/ResumeNew";
 import Certificate from "./components/Certificate/Certificate";
 import './i18n';
+import DynamicLanguageSelector from "./components/ChatBot";
+
 import {
   BrowserRouter as Router,
   Route,
@@ -44,6 +46,7 @@ function App() {
           <Route path="/certificate" element={<Certificate />} />
           <Route path="*" element={<Navigate to="/"/>} />
         </Routes>
+        <DynamicLanguageSelector/>
         <Footer />
       </div>
     </Router>
