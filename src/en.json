@@ -93,9 +93,113 @@
           "footer": {
           "designer": "Designed and Developed by GHAOURI Zouhair",
           "copyright": "Copyright © {{year}} ZG"
+        },
+        "projects": {
+          "heading": {
+            "recent": "My Recent",
+            "works": "Works"
+          },
+          "subheading": "Here are a few projects I've worked on recently.",
+          "welcomeImmo": {
+            "title": "Welcome Immo",
+            "description": "Welcome Immo revolutionizes the real estate experience with a modern, user-friendly platform. Designed for both real estate professionals and clients in search of their dream homes, it streamlines property management and client communication. Featuring intelligent notifications and an AI-driven chatbot, Welcome Immo makes managing listings and connecting with clients effortless, ensuring a smooth and enjoyable journey in the world of real estate.",
+            "technologies": [
+              "React.js",
+              "Laravel",
+              "Pusher for real-time notifications",
+              "OpenAI API for chatbot functionality",
+              "MySQL for robust data management"
+            ],
+            "features": [
+              "Efficient property listing and management tools",
+              "AI-powered chatbot for seamless admin support",
+              "Real-time notification system for both admins and clients",
+              "Advanced search and filtering capabilities for a tailored property search"
+            ]
+          },
+          "dreamTravel": {
+            "title": "Dream Travel",
+            "description": "Dream Travel is the ultimate companion for your adventures! Specifically designed for exploring Marrakech, this app makes discovering tourist attractions, accommodations, and dining options a breeze. With personalized travel suggestions based on your current location and a smart AI chatbot for on-the-go assistance, Dream Travel transforms your journey into an unforgettable experience.",
+            "technologies": [
+              "Python",
+              "Django",
+              "Google Maps API",
+              "Beautiful Soup for web scraping",
+              "TensorFlow for AI chatbot"
+            ],
+            "features": [
+              "Real-time personalized recommendations based on location",
+              "Interactive AI chatbot for instant travel guidance",
+              "Comprehensive admin dashboard for managing tourist information",
+              "Seamless integration with location-based services for tailored experiences"
+            ]
+          },
+          "chestXRay": {
+            "title": "Chest X-Ray",
+            "description": "Chest X-Ray is an innovative application that leverages advanced machine learning to assess chest X-ray images, detecting pneumonia and generating comprehensive health reports. Users can also access a chatbot for medical information, symptoms, and medications.",
+            "technologies": [
+              "Python",
+              "Django",
+              "TensorFlow for AI chatbot",
+              "Beautiful Soup for web scraping"
+            ],
+            "features": [
+              "Pneumonia detection from X-ray images",
+              "Comprehensive health report generation",
+              "Interactive chatbot for medical queries",
+              "Doctor search by specialization and location",
+              "Data sourced from web scraping for accuracy"
+            ]
+          },
+          "rideTogether": {
+            "title": "Ride Together",
+            "description": "Ride Together is your ultimate solution for seamless carpooling! This web app simplifies the process of booking a vehicle along with its driver, making travel more accessible and convenient for everyone.",
+            "technologies": [
+              "PHP",
+              "MySQL",
+              "HTML",
+              "CSS",
+              "JavaScript"
+            ],
+            "features": [
+              "User-friendly vehicle booking interface",
+              "Secure communication between clients and drivers",
+              "Efficient management of ride requests and schedules"
+            ]
+          },
+          "disneyDataExploration": {
+            "title": "Disney Data Exploration",
+            "description": "Dive into the enchanting world of Disney through our Exploratory Data Analysis project! By analyzing the Disney dataset, this project uncovers hidden trends and relationships in beloved films and series.",
+            "technologies": [
+              "Python",
+              "Pandas",
+              "Matplotlib",
+              "Seaborn",
+              "Jupyter Notebook"
+            ],
+            "features": [
+              "Insights into the top categories and directors",
+              "Visualizations of actor performance and series rankings",
+              "Identification of similar content based on text features",
+              "Trend analysis on the focus of Disney's content over the years"
+            ]
+          }
+        },
+        "projectCard": {
+          "details": "Details",
+          "demo": "Demo"
+        },
+        "detailsModal": {
+          "description": "Description",
+          "technologiesUsed": "Technologies Used",
+          "keyFeatures": "Key Features",
+          "close": "Close",
+          "watchDemo": "Watch Demo"
+        },
+        "videoModal": {
+          "playError": "Unable to play the video.",
+          "loadError": "Error loading video.",
+          "unsupportedBrowser": "Your browser does not support the video tag."
         }
-      
-        
-     
-  
+
   }

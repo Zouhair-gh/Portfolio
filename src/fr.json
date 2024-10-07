@@ -94,8 +94,113 @@
       "footer": {
         "designer": "Conçu et développé par GHAOURI Zouhair",
         "copyright": "Droit d'auteur © {{year}} ZG"
-      }
-      
-  
-    
+      },
+      "projects": {
+  "heading": {
+    "recent": "Mes Travaux",
+    "works": " Récents"
+  },
+  "subheading": "Voici quelques projets récents sur lesquels j'ai travaillé.",
+  "welcomeImmo": {
+    "title": "Welcome Immo",
+    "description": "Welcome Immo révolutionne l'expérience immobilière avec une plateforme moderne et conviviale. Conçue pour les professionnels de l'immobilier et les clients à la recherche de leur maison de rêve, elle simplifie la gestion des propriétés et la communication client. Avec des notifications intelligentes et un chatbot alimenté par l'IA, Welcome Immo rend la gestion des annonces et la connexion avec les clients faciles, garantissant un parcours fluide et agréable dans le monde de l'immobilier.",
+    "technologies": [
+      "React.js",
+      "Laravel",
+      "Pusher pour les notifications en temps réel",
+      "API OpenAI pour la fonctionnalité de chatbot",
+      "MySQL pour une gestion robuste des données"
+    ],
+    "features": [
+      "Outils de gestion et de liste de propriétés efficaces",
+      "Chatbot alimenté par l'IA pour un support administratif fluide",
+      "Système de notification en temps réel pour les administrateurs et les clients",
+      "Fonctionnalités avancées de recherche et de filtrage pour une recherche de propriété sur mesure"
+    ]
+  },
+  "dreamTravel": {
+    "title": "Dream Travel",
+    "description": "Dream Travel est le compagnon ultime pour vos aventures ! Conçue spécifiquement pour explorer Marrakech, cette application facilite la découverte des attractions touristiques, des hébergements et des options de restauration. Avec des suggestions de voyage personnalisées basées sur votre localisation actuelle et un chatbot intelligent pour une assistance en déplacement, Dream Travel transforme votre voyage en une expérience inoubliable.",
+    "technologies": [
+      "Python",
+      "Django",
+      "API Google Maps",
+      "Beautiful Soup pour le web scraping",
+      "TensorFlow pour le chatbot IA"
+    ],
+    "features": [
+      "Recommandations personnalisées en temps réel basées sur la localisation",
+      "Chatbot IA interactif pour des conseils de voyage instantanés",
+      "Tableau de bord administratif complet pour gérer les informations touristiques",
+      "Intégration transparente avec les services basés sur la localisation pour des expériences sur mesure"
+    ]
+  },
+  "chestXRay": {
+    "title": "Radiographie Thoracique",
+    "description": "Radiographie Thoracique est une application innovante qui utilise des techniques avancées d'apprentissage automatique pour évaluer les images de radiographies thoraciques, détecter la pneumonie et générer des rapports de santé complets. Les utilisateurs peuvent également accéder à un chatbot pour obtenir des informations médicales, des symptômes et des médicaments.",
+    "technologies": [
+      "Python",
+      "Django",
+      "TensorFlow pour le chatbot IA",
+      "Beautiful Soup pour le web scraping"
+    ],
+    "features": [
+      "Détection de la pneumonie à partir d'images radiographiques",
+      "Génération de rapports de santé détaillés",
+      "Chatbot interactif pour les requêtes médicales",
+      "Recherche de médecins par spécialisation et localisation",
+      "Données sourcées par web scraping pour la précision"
+    ]
+  },
+  "rideTogether": {
+    "title": "Covoiturage Ensemble",
+    "description": "Covoiturage Ensemble est votre solution ultime pour un covoiturage sans faille ! Cette application web simplifie le processus de réservation d'un véhicule avec son conducteur, rendant le voyage plus accessible et pratique pour tous.",
+    "technologies": [
+      "PHP",
+      "MySQL",
+      "HTML",
+      "CSS",
+      "JavaScript"
+    ],
+    "features": [
+      "Interface conviviale de réservation de véhicules",
+      "Communication sécurisée entre clients et conducteurs",
+      "Gestion efficace des demandes de trajet et des horaires"
+    ]
+  },
+  "disneyDataExploration": {
+    "title": "Exploration des Données Disney",
+    "description": "Plongez dans le monde enchanteur de Disney à travers notre projet d'Analyse Exploratoire de Données ! En analysant le jeu de données Disney, ce projet révèle des tendances cachées et des relations dans les films et séries bien-aimés.",
+    "technologies": [
+      "Python",
+      "Pandas",
+      "Matplotlib",
+      "Seaborn",
+      "Jupyter Notebook"
+    ],
+    "features": [
+      "Aperçus sur les meilleures catégories et réalisateurs",
+      "Visualisations des performances des acteurs et des classements des séries",
+      "Identification de contenus similaires basée sur les caractéristiques textuelles",
+      "Analyse des tendances sur l'orientation du contenu Disney au fil des ans"
+    ]
+  }
+},
+"projectCard": {
+  "details": "Détails",
+  "demo": "Démo"
+},
+"detailsModal": {
+  "description": "Description",
+  "technologiesUsed": "Technologies Utilisées",
+  "keyFeatures": "Caractéristiques Principales",
+  "close": "Fermer",
+  "watchDemo": "Voir Démo"
+},
+"videoModal": {
+  "playError": "Impossible de lire la vidéo.",
+  "loadError": "Erreur de chargement de la vidéo.",
+  "unsupportedBrowser": "Votre navigateur ne prend pas en charge la balise vidéo."
+}
+
   }

@@ -1,137 +1,355 @@
-import React, { useState } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import { Container, Row, Col, Card, Button, Modal } from "react-bootstrap";
 import Particle from "../Particle";
-import { BsGithub, BsPlayCircle } from "react-icons/bs";
+import { BsPlayCircle, BsInfoCircle, BsFullscreen, BsFullscreenExit } from "react-icons/bs";
+import { BiVolumeFull, BiVolumeMute } from "react-icons/bi";
+import { useTranslation } from "react-i18next";
+import './style.css';
 
 // Import your project images
-import leaf from "../../Assets/Projects/wimmo.png";
-import emotion from "../../Assets/Projects/DreamTravel.png";
-import editor from "../../Assets/Projects/codeEditor.png";
 import wimmo from "../../Assets/Projects/wimmo.png";
-import suicide from "../../Assets/Projects/suicide.png";
-import bitsOfCode from "../../Assets/Projects/DreamTravel.png";
+import dreamTravel from "../../Assets/Projects/DreamTravel.png";
+import chestXray from "../../Assets/Projects/chestXray.png";
+import RideTogether from "../../Assets/Projects/RideTogether.png";
+import Data from "../../Assets/Projects/dataa.png";
 
-// VideoModal component
-const VideoModal = ({ show, onHide, videoSrc }) => {
+//import videos
+import wimmovid from '../../Assets/videos/wimmo.mp4';
+import dreamTravelVideo from "../../Assets/videos/DreamTravel.mp4";
+import chestXrayVideo from "../../Assets/videos/chestXray.mp4";
+import rideTogethervideo from '../../Assets/videos/ridetogether.mp4';
+
+const VideoModal = ({ show, onHide, videoSrc, title }) => {
+  const { t } = useTranslation();
+  const videoRef = useRef(null);
+  const [isPlaying, setIsPlaying] = useState(false);
+  const [isMuted, setIsMuted] = useState(false);
+  const [isFullscreen, setIsFullscreen] = useState(false);
+  const [currentTime, setCurrentTime] = useState(0);
+  const [duration, setDuration] = useState(0);
+  const [error, setError] = useState(null);
+
+  useEffect(() => {
+    if (!show) {
+      setIsPlaying(false);
+      setCurrentTime(0);
+      setDuration(0);
+      setError(null);
+    }
+  }, [show]);
+
+  useEffect(() => {
+    if (show && videoRef.current) {
+      videoRef.current.load();
+    }
+
+    return () => {
+      if (videoRef.current) {
+        videoRef.current.pause();
+      }
+    };
+  }, [show, videoSrc]);
+
+  const togglePlay = async () => {
+    if (videoRef.current) {
+      try {
+        if (isPlaying) {
+          await videoRef.current.pause();
+        } else {
+          await videoRef.current.play();
+        }
+        setIsPlaying(!isPlaying);
+      } catch (error) {
+        console.error("Error toggling play state:", error);
+        setError(t('videoModal.playError'));
+      }
+    }
+  };
+
+  const handleModalClose = () => {
+    if (videoRef.current) {
+      videoRef.current.pause();
+    }
+    setIsPlaying(false);
+    onHide();
+  };
+
+  const toggleMute = () => {
+    if (videoRef.current) {
+      videoRef.current.muted = !isMuted;
+      setIsMuted(!isMuted);
+    }
+  };
+
+  const toggleFullscreen = () => {
+    if (!document.fullscreenElement) {
+      videoRef.current.requestFullscreen();
+      setIsFullscreen(true);
+    } else {
+      document.exitFullscreen();
+      setIsFullscreen(false);
+    }
+  };
+
+  const handleTimeUpdate = () => {
+    if (videoRef.current) {
+      setCurrentTime(videoRef.current.currentTime);
+    }
+  };
+
+  const handleLoadedMetadata = () => {
+    if (videoRef.current) {
+      setDuration(videoRef.current.duration);
+    }
+  };
+
+  const handleSeek = (e) => {
+    const time = e.target.value;
+    if (videoRef.current) {
+      videoRef.current.currentTime = time;
+      setCurrentTime(time);
+    }
+  };
+
+  const formatTime = (time) => {
+    const minutes = Math.floor(time / 60);
+    const seconds = Math.floor(time % 60);
+    return `${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
+  };
+
   return (
-    <Modal show={show} onHide={onHide} size="lg" centered>
-      <Modal.Header closeButton>
-        <Modal.Title>Project Demo</Modal.Title>
+    <Modal show={show} onHide={handleModalClose} size="lg" centered className="video-modal">
+      <Modal.Header closeButton style={{
+        background: 'linear-gradient(135deg, #4a2fb9, #2e2259, #4a2fb9)',
+        color: 'white'
+      }}>
+        <Modal.Title>{title}</Modal.Title>
       </Modal.Header>
-      <Modal.Body>
-        <div className="ratio ratio-16x9">
-          <video src={videoSrc} controls />
+      <Modal.Body className="p-0">
+        <div className="video-container">
+          <video
+            ref={videoRef}
+            onTimeUpdate={handleTimeUpdate}
+            onLoadedMetadata={handleLoadedMetadata}
+            onClick={togglePlay}
+            controls
+            onError={() => setError(t('videoModal.loadError'))}
+          >
+            <source src={videoSrc} type="video/mp4" />
+            {t('videoModal.unsupportedBrowser')}
+          </video>
+          {error && <div className="error-message">{error}</div>}
+          <div className="video-controls">
+            <Button variant="link" onClick={togglePlay}>
+              {isPlaying ? <span>⏸</span> : <span>▶</span>}
+            </Button>
+            <input
+              type="range"
+              className="time-slider"
+              value={currentTime}
+              max={duration || 0}
+              onChange={handleSeek}
+            />
+            <span className="time-display">
+              {formatTime(currentTime)} / {formatTime(duration)}
+            </span>
+            <Button variant="link" onClick={toggleMute}>
+              {isMuted ? <BiVolumeMute /> : <BiVolumeFull />}
+            </Button>
+            <Button variant="link" onClick={toggleFullscreen}>
+              {isFullscreen ? <BsFullscreenExit /> : <BsFullscreen />}
+            </Button>
+          </div>
         </div>
       </Modal.Body>
     </Modal>
   );
 };
 
-// Updated ProjectCard component
-const ProjectCard = ({ imgPath, title, description, ghLink, demoVideo }) => {
-  const [showModal, setShowModal] = useState(false);
+const DetailsModal = ({ show, onHide, project }) => {
+  const { t } = useTranslation();
+
+  return (
+    <Modal show={show} onHide={onHide} size="lg" centered className="details-modal">
+      <Modal.Header 
+        closeButton 
+        style={{
+          background: 'linear-gradient(135deg, #4a2fb9, #2e2259, #4a2fb9)',
+          color: 'white'
+        }}
+      >
+        <Modal.Title>{t(`projects.${project.id}.title`)}</Modal.Title>
+      </Modal.Header>
+      <Modal.Body>
+        <Row>
+          <Col md={6}>
+            <img src={project.imgPath} alt={t(`projects.${project.id}.title`)} className="img-fluid rounded" />
+          </Col>
+          <Col md={6}>
+            <h4>{t('detailsModal.description')}</h4>
+            <p>{t(`projects.${project.id}.description`)}</p>
+            <h4>{t('detailsModal.technologiesUsed')}</h4>
+            <ul>
+              {project.technologies.map((tech, index) => (
+                <li key={index}>{t(`projects.${project.id}.technologies.${index}`)}</li>
+              ))}
+            </ul>
+            <h4>{t('detailsModal.keyFeatures')}</h4>
+            <ul>
+              {project.features.map((feature, index) => (
+                <li key={index}>{t(`projects.${project.id}.features.${index}`)}</li>
+              ))}
+            </ul>
+          </Col>
+        </Row>
+      </Modal.Body>
+      <Modal.Footer>
+        <Button variant="secondary" onClick={onHide}>{t('detailsModal.close')}</Button>
+        {project.demoVideo && (
+          <Button variant="primary" onClick={() => window.open(project.demoVideo, "_blank")}>
+            <BsPlayCircle /> {t('detailsModal.watchDemo')}
+          </Button>
+        )}
+      </Modal.Footer>
+    </Modal>
+  );
+};
+
+const ProjectCard = ({ project }) => {
+  const { t } = useTranslation();
+  const [showVideoModal, setShowVideoModal] = useState(false);
+  const [showDetailsModal, setShowDetailsModal] = useState(false);
 
   return (
     <Card className="project-card-view">
-      <Card.Img variant="top" src={imgPath} alt="card-img" />
+      <Card.Img variant="top" src={project.imgPath} alt="card-img" />
       <Card.Body>
-        <Card.Title>{title}</Card.Title>
-        <Card.Text style={{ textAlign: "justify" }}>{description}</Card.Text>
-        <Button variant="primary" href={ghLink} target="_blank">
-          <BsGithub /> &nbsp; GitHub
+        <Card.Title>{t(`projects.${project.id}.title`)}</Card.Title>
+        <Card.Text style={{ textAlign: "justify" }}>{t(`projects.${project.id}.description`)}</Card.Text>
+        <Button
+          variant="primary"
+          onClick={() => setShowDetailsModal(true)}
+          className="mr-2"
+        >
+          <BsInfoCircle /> &nbsp; {t('projectCard.details')}
         </Button>
-        {demoVideo && (
+        {project.demoVideo && (
           <Button
-            variant="primary"
-            onClick={() => setShowModal(true)}
+            variant="secondary"
+            onClick={() => setShowVideoModal(true)}
             style={{ marginLeft: "10px" }}
           >
-            <BsPlayCircle /> &nbsp; Demo
+            <BsPlayCircle /> &nbsp; {t('projectCard.demo')}
           </Button>
         )}
         <VideoModal
-          show={showModal}
-          onHide={() => setShowModal(false)}
-          videoSrc={demoVideo}
+          show={showVideoModal}
+          onHide={() => setShowVideoModal(false)}
+          videoSrc={project.demoVideo}
+          title={t(`projects.${project.id}.title`)}
+        />
+        <DetailsModal
+          show={showDetailsModal}
+          onHide={() => setShowDetailsModal(false)}
+          project={project}
         />
       </Card.Body>
     </Card>
   );
 };
 
-// The rest of the code remains the same...
-
 function Projects() {
+  const { t } = useTranslation();
+
+  const projects = [
+    {
+      id: "welcomeImmo",
+      imgPath: wimmo,
+      title: "Welcome Immo",
+      description: "projects.welcomeImmo.description",
+      demoVideo: wimmovid,
+      technologies: ["React.js", "Laravel", "Pusher", "OpenAI API", "MySQL"],
+      features: [
+        "projects.welcomeImmo.features.0",
+        "projects.welcomeImmo.features.1",
+        "projects.welcomeImmo.features.2",
+        "projects.welcomeImmo.features.3"
+      ]
+    },
+    {
+      id: "dreamTravel",
+      imgPath: dreamTravel,
+      title: "Dream Travel",
+      description: "projects.dreamTravel.description",
+      demoVideo: dreamTravelVideo,
+      technologies: ["Python", "Django", "Google Maps API", "Beautiful Soup", "TensorFlow"],
+      features: [
+        "projects.dreamTravel.features.0",
+        "projects.dreamTravel.features.1",
+        "projects.dreamTravel.features.2",
+        "projects.dreamTravel.features.3"
+      ]
+    },
+    {
+      id: "chestXRay",
+      imgPath: chestXray,
+      title: "Chest X-Ray",
+      description: "projects.chestXRay.description",
+      demoVideo: chestXrayVideo,
+      technologies: ["Python", "Django", "TensorFlow", "Beautiful Soup"],
+      features: [
+        "projects.chestXRay.features.0",
+        "projects.chestXRay.features.1",
+        "projects.chestXRay.features.2",
+        "projects.chestXRay.features.3",
+        "projects.chestXRay.features.4"
+      ]
+    },
+    {
+      id: "rideTogether",
+      imgPath: RideTogether,
+      title: "Ride Together",
+      description: "projects.rideTogether.description",
+      demoVideo: rideTogethervideo,
+      technologies: ["PHP", "MySQL", "HTML", "CSS", "JavaScript"],
+      features: [
+        "projects.rideTogether.features.0",
+        "projects.rideTogether.features.1",
+        "projects.rideTogether.features.2"
+      ]
+    },
+    {
+      id: "disneyDataExploration",
+      imgPath: Data,
+      title: "Disney Data Exploration",
+      description: "projects.disneyDataExploration.description",
+      demoVideo: "https://github.com/Zouhair-gh/Disney-Data-Exploration.git",
+      technologies: ["Python", "Pandas", "Matplotlib", "Seaborn", "Jupyter Notebook"],
+      features: [
+        "projects.disneyDataExploration.features.0",
+        "projects.disneyDataExploration.features.1",
+        "projects.disneyDataExploration.features.2",
+        "projects.disneyDataExploration.features.3"
+      ]
+    }
+  ];
+
   return (
     <Container fluid className="project-section">
       <Particle />
       <Container>
         <h1 className="project-heading">
-          My Recent <strong className="purple">Works </strong>
+          {t('projects.heading.recent')} <strong className="purple">{t('projects.heading.works')}</strong>
         </h1>
         <p style={{ color: "white" }}>
-          Here are a few projects I've worked on recently.
+          {t('projects.subheading')}
         </p>
         <Row style={{ justifyContent: "center", paddingBottom: "10px" }}>
-          <Col md={4} className="project-card">
-            <ProjectCard
-              imgPath={wimmo}
-              title="Welcome Immo"
-              description="Discover a revolutionary way to manage real estate with Welcome Immo! This smart platform takes the hassle out of property management, making it easier than ever for agencies to stay on top of their listings and communicate effortlessly with clients. Whether you're a busy agent or a potential homeowner, Welcome Immo simplifies everything – from receiving instant updates on new properties to interacting with a helpful AI assistant. Stay connected, save time, and enjoy a smooth, intuitive experience that puts you in control of real estate like never before."
-              ghLink="https://github.com/soumyajit4419/wimmo"
-              demoVideo="../../Assets/wimmo.mp4"
-            />
-          </Col>
-
-          <Col md={4} className="project-card">
-            <ProjectCard
-              imgPath={bitsOfCode}
-              title="Bits-0f-C0de"
-              description="My personal blog page build with Next.js and Tailwind Css which takes the content from makdown files and renders it using Next.js. Supports dark mode and easy to write blogs using markdown."
-              ghLink="https://github.com/soumyajit4419/Bits-0f-C0de"
-              demoVideo="../../Assets/DreamTravel.mp4"
-            />
-          </Col>
-
-          <Col md={4} className="project-card">
-            <ProjectCard
-              imgPath={editor}
-              title="Editor.io"
-              description="Online code and markdown editor build with react.js. Online Editor which supports html, css, and js code with instant view of website. Online markdown editor for building README file which supports GFM, Custom Html tags with toolbar and instant preview.Both the editor supports auto save of work using Local Storage"
-              ghLink="https://github.com/soumyajit4419/Editor.io"
-              demoVideo="/path/to/editor-demo.mp4"
-            />
-          </Col>
-
-          <Col md={4} className="project-card">
-            <ProjectCard
-              imgPath={leaf}
-              title="Plant AI"
-              description="Used the plant disease dataset from Kaggle and trained a image classifer model using 'PyTorch' framework using CNN and Transfer Learning with 38 classes of various plant leaves. The model was successfully able to detect diseased and healthy leaves of 14 unique plants. I was able to achieve an accuracy of 98% by using Resnet34 pretrained model."
-              ghLink="https://github.com/soumyajit4419/Plant_AI"
-              demoVideo="/path/to/plant-ai-demo.mp4"
-            />
-          </Col>
-
-          <Col md={4} className="project-card">
-            <ProjectCard
-              imgPath={suicide}
-              title="Ai For Social Good"
-              description="Using 'Natural Launguage Processing' for the detection of suicide-related posts and user's suicide ideation in cyberspace  and thus helping in sucide prevention."
-              ghLink="https://github.com/soumyajit4419/AI_For_Social_Good"
-              demoVideo="/path/to/ai-social-good-demo.mp4"
-            />
-          </Col>
-
-          <Col md={4} className="project-card">
-            <ProjectCard
-              imgPath={emotion}
-              title="Face Recognition and Emotion Detection"
-              description="Trained a CNN classifier using 'FER-2013 dataset' with Keras and tensorflow backened. The classifier sucessfully predicted the various types of emotions of human. And the highest accuracy obtained with the model was 60.1%. Then used Open-CV to detect the face in an image and then pass the face to the classifer to predict the emotion of a person."
-              ghLink="https://github.com/soumyajit4419/Face_And_Emotion_Detection"
-              demoVideo="/path/to/emotion-detection-demo.mp4"
-            />
-          </Col>
+          {projects.map((project, index) => (
+            <Col md={4} className="project-card" key={index}>
+              <ProjectCard project={project} />
+            </Col>
+          ))}
         </Row>
       </Container>
     </Container>
