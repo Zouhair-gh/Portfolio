@@ -1,0 +1,37 @@
+{
+  "files": {
+    "main.css": "/Portfolio/static/css/main.74ed68cd.css",
+    "main.js": "/Portfolio/static/js/main.6fd5f309.js",
+    "static/js/453.ace21015.chunk.js": "/Portfolio/static/js/453.ace21015.chunk.js",
+    "static/media/wimmo.mp4": "/Portfolio/static/media/wimmo.540cd5ab51cfa8488f33.mp4",
+    "static/media/DreamTravel.mp4": "/Portfolio/static/media/DreamTravel.0a1ca248fade914c8ce1.mp4",
+    "static/media/ridetogether.mp4": "/Portfolio/static/media/ridetogether.a892a75e4421fadcc297.mp4",
+    "static/media/chestXray.mp4": "/Portfolio/static/media/chestXray.4db204c55a68ca291184.mp4",
+    "static/media/Advanced_Styling_with_Responsive_Design.jpg": "/Portfolio/static/media/Advanced_Styling_with_Responsive_Design.763dd2b44bbcf8a65dab.jpg",
+    "static/media/Developers.jpg": "/Portfolio/static/media/Developers.93ecf9fa0b80ded6dc37.jpg",
+    "static/media/Software Engineering Software Design and Project Management.jpg": "/Portfolio/static/media/Software Engineering Software Design and Project Management.8715b02a49fd25697e97.jpg",
+    "static/media/prompt.jpg": "/Portfolio/static/media/prompt.3f10ef21356a9ac21767.jpg",
+    "static/media/Portrait.jpg": "/Portfolio/static/media/Portrait.5bc2bc4ca5bcf03e1d85.jpg",
+    "static/media/Laravel-coursera.jpg": "/Portfolio/static/media/Laravel-coursera.bf6f9bb47eb08eec6100.jpg",
+    "static/media/GHAOURI_Zouhair_Resume.png": "/Portfolio/static/media/GHAOURI_Zouhair_Resume.ad7130735cd4f8b96d0b.png",
+    "static/media/GHAOURI_Zouhair_Resume_English_version.png": "/Portfolio/static/media/GHAOURI_Zouhair_Resume_English_version.556efcf51a44a2abec57.png",
+    "static/media/RideTogether.png": "/Portfolio/static/media/RideTogether.87fe779f8c1a6dbe8ba5.png",
+    "static/media/wimmo.png": "/Portfolio/static/media/wimmo.18daf6e4acf78afb4e18.png",
+    "static/media/DreamTravel.png": "/Portfolio/static/media/DreamTravel.142e557df7b00929bee5.png",
+    "static/media/chestXray.png": "/Portfolio/static/media/chestXray.1848cc32fa8b0b5bc5ba.png",
+    "static/media/dataa.png": "/Portfolio/static/media/dataa.05594b583a73339706ac.png",
+    "static/media/GHAOURI_Zouhair_Resume.pdf": "/Portfolio/static/media/GHAOURI_Zouhair_Resume.150b6eaa624bbbdd5605.pdf",
+    "static/media/GHAOURI_Zouhair_Resume_English_version.pdf": "/Portfolio/static/media/GHAOURI_Zouhair_Resume_English_version.8340009cdbca8de092c1.pdf",
+    "static/media/home-main.svg": "/Portfolio/static/media/home-main.541f8179af8209ce03ccf2178fe62dbf.svg",
+    "static/media/about.png": "/Portfolio/static/media/about.aee0f771fbfc1e7b8fa8.png",
+    "index.html": "/Portfolio/index.html",
+    "static/media/pre.svg": "/Portfolio/static/media/pre.d4812f51c8c80976eaab.svg",
+    "main.74ed68cd.css.map": "/Portfolio/static/css/main.74ed68cd.css.map",
+    "main.6fd5f309.js.map": "/Portfolio/static/js/main.6fd5f309.js.map",
+    "453.ace21015.chunk.js.map": "/Portfolio/static/js/453.ace21015.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.74ed68cd.css",
+    "static/js/main.6fd5f309.js"
+  ]
+}
