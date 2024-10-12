@@ -14,6 +14,7 @@ function ResumeNew() {
 
   const cvImage = i18n.language === 'fr' ? cvImageFR : cvImageEN;
   const pdf = i18n.language === 'fr' ? pdfFR : pdfEN;
+  
 
   return (
     <div>

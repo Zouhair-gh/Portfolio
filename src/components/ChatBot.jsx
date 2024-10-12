@@ -12,6 +12,7 @@ function DynamicLanguageSelector() {
   const languages = [
     { code: 'en', name: 'English', countryCode: 'GB' },
     { code: 'fr', name: 'Français', countryCode: 'FR' },
+    { code: 'ar', name: 'العربية', countryCode: 'SA' },
   ];
 
   useEffect(() => {
@@ -49,7 +50,13 @@ function DynamicLanguageSelector() {
               onClick={() => changeLanguage(lang.code)}
               className={`language-option ${selectedLanguage === lang.code ? 'selected' : ''}`}
             >
-              <CountryFlag countryCode={lang.countryCode} svg style={{ width: '24px', height: '24px', marginRight: '10px' }} />
+             <CountryFlag 
+              countryCode={lang.countryCode} 
+              svg 
+              fallback={<span>{lang.countryCode}</span>} 
+              style={{ width: '24px', height: '24px', marginRight: '10px' }} 
+            />
+
               <span className="lang-name">{lang.name}</span>
             </button>
           ))}
@@ -71,7 +78,7 @@ function DynamicLanguageSelector() {
           display: flex;
           align-items: center;
           justify-content: center;
-          background: #f67367; /* Changed the background color here */
+          background: #f67367;
           box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
           transition: all 0.3s ease;
         }
@@ -79,7 +86,7 @@ function DynamicLanguageSelector() {
           transform: scale(1.1);
         }
         .selector-toggle.open {
-          background: #f67367; /* Keep the background color on open */
+          background: #f67367;
         }
         .language-options {
           position: absolute;
