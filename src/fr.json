@@ -195,7 +195,8 @@
   "technologiesUsed": "Technologies Utilisées",
   "keyFeatures": "Caractéristiques Principales",
   "close": "Fermer",
-  "watchDemo": "Voir Démo"
+  "watchDemo": "Voir Démo",
+  "collaborators":"Collaborateur(s)"
 },
 "videoModal": {
   "playError": "Impossible de lire la vidéo.",

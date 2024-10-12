@@ -194,7 +194,8 @@
           "technologiesUsed": "Technologies Used",
           "keyFeatures": "Key Features",
           "close": "Close",
-          "watchDemo": "Watch Demo"
+          "watchDemo": "Watch Demo",
+          "collaborators":"Collaborator(s)"
         },
         "videoModal": {
           "playError": "Unable to play the video.",
